@@ -29,5 +29,4 @@ node_modules
 #Webstorm
 .idea
 
-#Parameters
-parameters.js
+

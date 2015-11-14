@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var cli = require('commander');
+
+var Builder = require('../lib/Builder.js');
+
+// Build the selected app with the correct parameters
+var parameters = require('../parameters.js');
+var builder = new Builder(parameters);
+
+if (!fs.existsSync(__dirname.replace('bin', '') + 'parameters.js')) {
+  throw new Error(
+    'Please create a parameters.js file in the root of the project. ' +
+    'See the parameters.example.js file for help.'
+  );
+}
+
+// Setup the CLI with commander
+cli
+  .version('0.1.0')
+  .usage('<type>\n\n    Where <type> is "api"')
+
+cli.parse(process.argv);
+
+appType = cli.args[0];
+
+// Build the app with the correct parameters
+parameters = require('../parameters.js');
+builder = new Builder(parameters);
+
+if (!appType) {
+  return cli.outputHelp();
+}
+
+var app = builder.buildApiApp()
+
+app.start();
