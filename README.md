@@ -1,6 +1,5 @@
-# OpenDoor Code Assignment "Take Home Problem: Software Engineer"
+# Real Estate Challenge
 
-For the full problem description, visit this [link](https://docs.google.com/document/d/1VKMT-ajGzRb3B9IrfWJJC9xcMB3MGR6WQvCClLx5nRc/edit).
 To visit the hosted application on Heroku, visit this [link](https://sheltered-plateau-5767.herokuapp.com/listings)
 
 # Solution Outline
